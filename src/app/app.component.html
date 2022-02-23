@@ -1,0 +1,27 @@
+<app-header 
+    (headercomp)="homeSender($event)"
+    (headerBlog)="homeBlog($event)"
+    [username]='username'
+></app-header>
+
+<app-login 
+    (logincomp)="loginSender($event)" 
+    [appsends] = 'data'
+    *ngIf="activeComponent === 'LOGIN'"
+></app-login>
+
+<app-home
+    *ngIf="activeComponent === 'HOME'"
+></app-home>
+
+<app-blog
+    [username]='username'
+    [newblog] = 'newBlog'
+    *ngIf="activeComponent === 'BLOG'"
+></app-blog>
+
+<app-aboutus
+    *ngIf="activeComponent === 'ABOUTUS'"
+></app-aboutus>
+
+<app-footer></app-footer>

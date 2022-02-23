@@ -1,0 +1,41 @@
+<header>
+    <nav>
+        <ul>
+            <li (click)="itemSelected('HOME')"
+            activeItem [isActive]="isActive('HOME')"
+            inactiveItem [isInactive]="isInactive('HOME')"
+            >Home</li>
+            <li (click)="itemSelected('BLOG')"
+            
+            activeItem [isActive]="isActive('BLOG')"
+            inactiveItem [isInactive]="isInactive('BLOG')"
+            >Blogs</li>
+            <li (click)="itemSelected('CREATEBLOG')" *ngIf="username.length>0"
+                matTooltip="Create a new blog"
+                activeItem [isActive]="isActive('CREATEBLOG')"
+                inactiveItem [isInactive]="isInactive('CREATEBLOG')"
+                >Create Blog</li>
+            <li (click)="itemSelected('ABOUTUS')"
+            activeItem [isActive]="isActive('ABOUTUS')"
+            inactiveItem [isInactive]="isInactive('ABOUTUS')"
+            >About Us</li>
+            <li 
+                (click)="itemSelected('LOGIN')" 
+                *ngIf="username.length<=0"
+                activeItem [isActive]="isActive('LOGIN')"
+                inactiveItem [isInactive]="isInactive('LOGIN')"
+            >
+                Login
+            </li>
+            <li (click)="itemSelected('LOGOUT')" *ngIf="username.length>0"
+                activeItem [isActive]="isActive('LOGOUT')"
+                matTooltip="Click to logout of your account"
+                >Logout</li>
+            <li *ngIf="username.length>0"
+                activeItem [isActive]="isActive('USERNAME')"
+                matTooltip="Currently Logged In User's name"
+                matTooltipPosition="after"
+                >{{bullet}} {{username}} </li>
+        </ul>
+    </nav>
+</header>
